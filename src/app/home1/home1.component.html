@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg nav-tabs navbar-light bg-success rounded sticky-top">
+  <a class="navbar-brand" href="/home1">
+  <img src="assets/logo1.png" class="rounded-circle" height="50" width="50"></a>
+  <button class="navbar-toggler hidden-lg-up" type="button"
+   data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+      aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home1">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contact">contact</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdownId"
+         data-toggle="dropdown">view</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="studentdetails">student details</a>
+          <a class="dropdown-item" routerLink="employeedetails">employee details</a>
+          <a class="dropdown-item" routerLink="coursedetails">course details</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="">logout</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+
+  <div class="container mt-5">
+      <div class="row">
+   <div class="col-md-3 col-sm-3 col-lg-3">
+    <div class="row">
+      <a class="text text-primary" routerLink="addstudent">Add student</a>
+    </div><br/><br/>
+    <div class="row">
+        <a class="text text-primary" routerLink="addemployee">Add Employee</a></div><br/>
+      <div class="row">
+          <a class="text text-primary" routerLink="addcourses">Add Courses</a></div> <br/>
+        <div class="row">
+            <a class="text text-primary" routerLink="addadmin">Add Admin</a><br/>
+          </div>
+
+  </div>
+  <div class="col-md col-sm col-lg">
+      <router-outlet></router-outlet>
+  </div>
+  </div>
+  </div>
+  

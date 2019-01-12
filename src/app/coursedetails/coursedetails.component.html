@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md col-sm col-lg">
+<form #ref="ngForm"(ngSubmit)="update(ref)" *ngIf="b">
+  <label>type of course</label><input type="text" [(ngModel)]=ab.course name="course">
+  <label>brance</label><input type="text"[(ngModel)]=ab.branch name="branch">
+  <label>Affiliated to</label><input type="text"[(ngModel)]=ab.affiliatedto name="affiliatedto">
+  <label>Fee details</label><input type="text"[(ngModel)]=ab.feedetails name="feedetails">
+  <button type="submit">save</button>
+</form>
+Search<input type="text" class="form-control col-3" [(ngModel)]="searchTerm">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Type of course</th>
+      <th>branch</th>
+      <th>Affiliated to</th>
+      <th>Fee details</th>
+      <th>delete</th>
+      <th>edit</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let i of arr | P2:searchTerm; let x=index">
+      <td>{{i.course}}</td>
+      <td>{{i.branch}}</td>
+      <td>{{i.affiliatedto}}</td>
+      <td>{{i.feedetails}}</td>
+      <td><button type="button" class="btn btn-danger" (click)="delete(i._id)">x</button></td>
+      <td><button type="button" class="btn btn-success"  (click)="edit(i)"data-toggle="modal"
+         data-target="">edit</button></td>
+    </tr>
+    
+
+</table>
+
+</div>
+</div>
+</div>

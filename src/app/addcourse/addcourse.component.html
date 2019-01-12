@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="jumbotron">
+    <form #abc="ngForm" (ngSubmit)="onSubmit(abc.value)">
+    <div class="row">
+    <div class="col-5">
+    <div class="form-group">
+    <label for="1">Type of course</label>
+    <input type="text" id="1" class="form-control" name="course" [(ngModel)]="course" #ref="ngModel" minlength="4">
+    <label *ngIf="ref.invalid&&ref.dirty&&ref.errors?.minlength" class="text-danger">min 4 characters req</label>
+    
+    </div>
+    <div class="form-group">
+    <label for="2">branch</label>
+    <input type="text" id="2" class="form-control" name="branch" [(ngModel)]="branch" #ref1="ngModel" minlength="3">
+    <label *ngIf="ref1.invalid&&ref1.dirty&&ref1.errors?.minlength" class="text-danger">min 3 characters req</label>
+    
+    </div>
+    <div class="form-group">
+    <label for="3">Affiliated to</label>
+    <input type="text" id="3" class="form-control" name="affiliatedto" [(ngModel)]="affiliatedto">
+    </div>
+    <div class="form-group">
+    <label for="4">Fee details</label>
+    <input type="numder" id="4" class="form-control" name="feedetails" [(ngModel)]="feedetails">
+    <button type="submit" class="btn btn-primary">register</button>    
+</div>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    

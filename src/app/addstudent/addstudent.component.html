@@ -1,0 +1,72 @@
+<div class="container">
+<div class="jumbotron">
+<form #abc="ngForm" (ngSubmit)="onSubmit(abc.value)">
+<div class="row">
+<div class="col-sm-5 col-lg-5 col-md-5">
+<div class="form-group">
+<label for="1">enter enrollment id</label>
+<input type="text" id="1" class="form-control" name="enrollmentid" #ref="ngModel" [(ngModel)]="enrollmentid" minlength="4">
+<label *ngIf="ref.invalid&&ref.dirty&&ref.errors?.minlength" class="text-danger">min 4 characters req</label>
+</div>
+<div class="form-group">
+<label for="2">enter First name</label>
+<input type="text" id="2" class="form-control" name="firstname" #ref2="ngModel" [(ngModel)]="firstname" minlength="7">
+<label *ngIf="ref2.invalid&&ref2.dirty&&ref2.errors?.minlength" class="text-danger">min 3 characters req</label>
+
+</div>
+<div class="form-group">
+<label for="3">enter Last name</label>
+<input type="text" id="3" class="form-control" name="lastname" [(ngModel)]=" lastname">
+</div>
+<div class="form-group">
+<label for="4">enter country</label>
+<input type="text" id="4" class="form-control" name="country" [(ngModel)]="country">
+</div>
+<div class="form-check">
+<label class="form-check-label">gender
+<br>
+<input type="radio" class="form-check-input" name="gender" [(ngModel)]="gender" value="male">male
+<br>
+<input type="radio" class="form-check-input" name="gender" [(ngModel)]="gender" value="female">female
+
+</label>
+</div>
+</div>
+<div class="col-sm-5 col-md-5 col-lg-5">
+<div class="form-group">
+<label for="1">enter email id</label>
+<input type="text" id="1" class="form-control" name="emailid" [(ngModel)]="emailid">
+</div>
+<div class="form-group">
+<label for="2">enter state</label>
+<input type="text" id="2" class="form-control" name="state" [(ngModel)]="state">
+</div>
+<div class="form-group">
+<label for="3">enter address</label>
+<textarea class="form-control" name="address" [(ngModel)]="address"></textarea>
+</div>
+<div class="form-group">
+<label for="4">enter password</label>
+<input type="text" id="4" class="form-control" name="password" #ref1="ngModel"[(ngModel)]="password" minlength="6" maxlength="6">
+<label *ngIf="ref1.invalid&&ref1.dirty&&ref1.errors?.minlength" class="text-danger">min 6 characters req</label>
+</div>
+</div>
+<div class="col-2">
+<div class="form-group">
+<label for="1">spring semister</label>
+<input type="text" id="1" class="form-control" name="springsemister" [(ngModel)]="springsemister">
+</div>
+<div class="form-group">
+<label for="1">fall semister</label>
+<input type="text" id="1" class="form-control" name="fallsemister" [(ngModel)]="fallsemister">
+</div>
+<div class="form-group">
+<label for="1">summer semister</label>
+<input type="text" id="1" class="form-control" name="summersemister" [(ngModel)]="summersemister">
+</div>
+<button type="submit" class="btn btn-primary" routerLink="preview">Register</button>
+</div>
+</div>
+</form>
+</div>
+</div>

@@ -1,0 +1,121 @@
+ss
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-lg-12">
+<form #ref="ngForm"(ngSubmit)="update(ref)" *ngIf="b">
+    <label>enter environment id</label><input type="text" [(ngModel)]=abc.enrollmentid name="enrollmentid">
+    <label>enter First name</label><input type="text"[(ngModel)]=abc.firstname name="firstname">
+    <label>enter Last name</label><input type="text"[(ngModel)]=abc.lastname name="lastname">
+    <label>enter country</label><input type="text"[(ngModel)]=abc.country name="country">
+    <label>gender</label><input type="text" [(ngModel)]=abc.gender name="gender">
+  <label>enter email id</label><input type="text"[(ngModel)]=abc.emailid name="emailid">
+  <label>enter state</label><input type="text"[(ngModel)]=abc.state name="state">
+  <label>enter address</label><input type="text"[(ngModel)]=abc.address name="address">
+  <label>enter password</label><input type="text"[(ngModel)]=abc.password name="password">
+  <label>spring semister</label><input type="text"[(ngModel)]=abc.springsemister name="springsemister">
+  <label>fall semister</label><input type="text"[(ngModel)]=abc.fallsemister name="fallsemister">
+  <label>summer semister</label><input type="text"[(ngModel)]=abc.summersemister name="summersemister">
+  <button type="submit">save</button>
+   
+
+</form>
+Search<input type="text" class="form-control col-md-3 col-sm-3 col-lg-3" [(ngModel)]="searchTerm">
+
+<table class="table">
+
+  <tr>
+    <th>enter environment id</th>
+    <th>enter First name</th>
+     <th>enter Last name</th>
+    <th>enter country</th>
+    <th>gender</th>
+    <th>enter email id</th>
+    <th>enter state</th>
+    <th>enter address</th>
+    <th>enter password</th>
+    <th>spring semister</th>
+    <th>fall semister</th>
+    <th>summer semister</th>
+    <th>edit</th>
+    <th>delete</th> 
+</tr>
+
+
+  <tr *ngFor="let i of arr | search:searchTerm; let x=index">
+    <td>{{i.enrollmentid}}</td>
+    <td>{{i.firstname}}</td>
+     <td>{{i.lastname}}</td>
+      <td>{{i.country}}</td>
+      <td>{{i.gender}}</td>
+      <td>{{i.emailid}}</td>
+      <td>{{i.state}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.password}}</td>
+      <td>{{i.springsemister}}</td>
+      <td>{{i.fallsemister}}</td>
+      <td>{{i.summersemister}}</td>
+
+     <td><button type="button" class="btn btn-danger" (click)="delete(i._id)">x</button></td>
+    <td><button type="button" class="btn btn-primary" data-toggle="modal"(click)="edit(i)" 
+       data-target="#w">edit</button></td> 
+  </tr>
+  
+
+</table>
+</div>
+</div>
+</div>
+<!-- <div class="modal" id="w">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container">
+          <div class="jumbotron">
+            <form #abc="ngForm" (ngSubmit)="onSubmit(abc.value)">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="2">s.no</label>
+                    <input type="text" id="2" class="form-control" name="sno" [(ngModel)]="sno">
+                  </div>
+                  <div class="form-group">
+                    <label for="1">name</label>
+                    <input type="text" id="1" class="form-control" name="name" [(ngModel)]="name" #ref="ngModel" minlength="6">
+                    <label *ngIf="ref.invalid&&ref.dirty&&ref.errors?.minlength" class="text-danger">min 6 characters req</label>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="3">age</label>
+                    <input type="text" id="3" class="form-control" name="age" [(ngModel)]="age">
+                  </div>
+                  <div class="form-group">
+                    <label for="1">enter email id</label>
+                    <input type="text" id="1" class="form-control" name="emailid" [(ngModel)]="emailid">
+                  </div>
+                 
+                  <div class="form-group">
+                    <label for="4">pn no</label>
+                    <input type="text" id="4" class="form-control" name="pn number" [(ngModel)]="pnno" #ref1="ngModel" minlength="5">
+                    <label *ngIf="ref1.invalid&&ref1.dirty&&ref1.errors?.minlength" class="text-danger">min 5 characters
+                      req</label>
+
+                  </div>
+                  <div class="form-group">
+                    <label for="3">city</label>
+                    <input type="text" id="3" class="form-control" name="city" [(ngModel)]="city">
+                  </div>
+
+                
+
+                <button type="button" class="btn btn-primary">register</button>
+                </div>
+              </div>
+        
+          </form>
+        </div>
+        |
+      </div>
+      </div>
+    </div>
+  </div>
+</div> -->

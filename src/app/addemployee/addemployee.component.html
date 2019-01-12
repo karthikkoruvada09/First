@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="jumbotron">
+        <form #abc="ngForm" (ngSubmit)="onSubmit(abc.value)">
+
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="1">enter name</label>
+                        <input type="text" id="1" class="form-control" name="name" [(ngModel)]="name" #ref="ngModel"
+                            minlength="6">
+                        <label *ngIf="ref.invalid&&ref.dirty&&ref.errors?.minlength" class="text-danger">min 3
+                            characters req</label>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="2">enter phone number</label>
+                        <input type="text" id="2" class="form-control" name="phoneno" [(ngModel)]="phoneno">
+                    </div>
+                    <div class="form-group">
+                        <label for="3">enter subject name</label>
+                        <input type="text" id="3" class="form-control" name="subjectname" [(ngModel)]="subjectname">
+                    </div>
+                    <div class="form-group">
+                        <label for="4">enter salary</label>
+                        <input type="text" id="4" class="form-control" name="salary" [(ngModel)]="salary" #ref1="ngModel">
+                        <label *ngIf="ref1.invalid&&ref1.dirty&&ref1.errors?.minlength" class="text-danger"></label>
+
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">gender
+                            <br>
+                            <input type="radio" class="form-check-input" name="gender" [(ngModel)]="gender" value="male">male
+                            <br>
+                            <input type="radio" class="form-check-input" name="gender" [(ngModel)]="gender" value="female">female
+
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <label for="1">enter email id</label>
+                        <input type="text" id="1" class="form-control" name="emailid" [(ngModel)]="emailid">
+                    </div>
+                    <div class="form-group">
+                        <label for="2">enter state</label>
+                        <input type="text" id="2" class="form-control" name="state" [(ngModel)]="state">
+                    </div>
+                    <div class="form-group">
+                        <label for="3">enter address</label>
+                        <textarea class="form-control" name="address" [(ngModel)]="address"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">register</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

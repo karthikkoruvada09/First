@@ -1,0 +1,45 @@
+<form #ref="ngForm"(ngSubmit)="update(ref)"  *ngIf="b">
+  <label>enter name</label><input type="text" [(ngModel)]=abd.name1 name="name1">
+  <label>enter phone number</label><input type="text"[(ngModel)]=abd.phoneno name="phoneno">
+  <label>enter subject name</label><input type="text"[(ngModel)]=abd.subjectname name="subjectname">
+  <label>enter salary</label><input type="text"[(ngModel)]=abd.salary name="salary">
+  <label>gender</label><input type="text" [(ngModel)]=abd.gender name="gender">
+  <label>enter email id</label><input type="text"[(ngModel)]=abd.emailid name="emailid">
+  <label>enter state</label><input type="text"[(ngModel)]=abd.state name="state">
+  <label>enter address</label><input type="text"[(ngModel)]=abd.address name="address">
+  <button type="submit">save</button>
+</form>
+
+Search<input type="text" class="form-control col-md-3 col-sm-3 col-lg-3" [(ngModel)]="searchTerm">
+<table class="table">
+  <thead>
+    <tr>
+      <th>enter name</th>
+      <th>enter phone number</th>
+      <th>enter subject name</th>
+      <th>enter salary</th>
+      <th>gender</th>
+      <th>enter email id</th>
+      <th>enter state</th>
+      <td>enter address</td>
+      <th>delete</th>
+      <th>edit</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let i of arr | P1:searchTerm; let x=index">
+    <td>{{i.name1}}</td>
+    <td>{{i.phoneno}}</td>
+    <td>{{i.subjectname}}</td>
+    <td>{{i.salary}}</td>
+    <td>{{i.gender}}</td>
+    <td>{{i.emailid}}</td>
+    <td>{{i.state}}</td>
+    <td>{{i.address}}</td>
+    
+    <td> <button type="button" class="btn btn-danger" (click)="delete(i._id)">delete</button></td>
+    <td><button type="button" class="btn btn-success" (click)="edit(i)"
+      data-toggle="modal" data-target="#q">edit</button></td>
+  </tr> 
+
+</table>
